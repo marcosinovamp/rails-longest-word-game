@@ -1,0 +1,27 @@
+<h1>Your Result</h1>
+<%if @test1 == false%>
+  <h2><%="Sorry, but \'#{@word}\' has some letters that are not #{@shwlet}."%></h2>
+<%elsif @test2 == false%>
+  <h2><%="Sorry, but \'#{@word}\' is not an english word."%></h2>
+<%elsif @test3 == false%>
+  <h2><%="Sorry, but there are duplicate letters on \'#{@word}\' that are not duplicated on #{@shwlet}."%></h2>
+<%else%>
+  <div class="board">
+    <h2><%="You made"%></h2>
+    <h2 id="brd"><%="#{@scresult.round(2)}"%></h2>
+    <h2><%="points"%></h2>
+  </div>
+  <div class="board">
+    <h3><%="with the word"%></h3>
+    <h3 id="brd"><%="\'#{@word}\'"%></h3>
+  </div>
+  <div class="board">
+    <h3><%="on"%></h3>
+    <h3 id="brd"><%="#{@fin_time.to_i - @start_time.to_i}"%></h3>
+    <h3><%="seconds."%></h3>
+  </div>
+  <%end%>
+<br>
+<div class="align">
+<a href="/new">Play again?</a>
+</div>
